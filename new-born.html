@@ -3,116 +3,99 @@
     <head>
         <link href="bootstrap.css" rel="stylesheet" type="text/css">
         <link href="styles.css" rel="stylesheet" type="text/css">
+        <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
         <script
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
-        <script type="text/javascript" src="scripts.js"></script>
+            <script type="text/javascript" src="scripts.js"></script>
         <title>New Born Registration Book</title>
     </head>
     <body>
         <div class="container">
             <h1>New Born Registration Book</h1>
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>Add a contact:</h2><br>
-                    <form id="new-contact">
-                        <div class="form-group">
-                            <label for="new-first-name">First name</label><br>
-                            <input type="text" class="form-control"
-                                id="new-first-name">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label for="new-last-name">Last name</label><br>
-                            <input type="text" class="form-control"
-                                id="new-last-name">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label for="gender">Gender</label><br>
-                            <input type="radio" name="gender" value="male"
-                                checked> Male<br>
-                            <input type="radio" name="gender" value="female">
-                            Female<br>
-                            <input type="radio" name="gender" value="other">
-                            Other
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label for="date-of-birth">Date of birth</label><br>
-                            <input type="date" id="birthday" name="bday">
-                        </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="new-father-name">Father's Name</label><br>
-                            <input type="text" class="form-control"
-                                id="fatherName">
-                        </div>
-                        <div class="form-group">
-                            <label for="new-mother-name">Mother's Name</label><br>
-                            <input type="text" class="form-control"
-                                id="motherName">
-                        </div>
-                        <br>
-                        <p>Does the father accept the child?</p>
-                        <div class="form-group">
-                            <label><input type=checkbox name=true>
-                                True</label>
-                            <label><input type=checkbox name=false>
-                                False</label><br>
-                            <br>
-                        </div>
-                        <p>Child disabilities</p>
-                        <div class="form-group"><label><input type=checkbox
-                                    name=true>
-                                True</label>
-                            <label><input type=checkbox name=false>
-                                False</label><br></div>
+<div id="form"><div class="col-md-6">
+    <h2>Add a contact:</h2>
+    <form id="new-contact">
+        <div class="form-group">
+            <label for="new-first-name">First name</label>
+            <input type="text" class="form-control"
+                id="new-first-name">
+        </div>
+        <div class="form-group">
+            <label for="new-last-name">Last name</label>
+            <input type="text" class="form-control"
+                id="new-last-name">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="gender">Gender</label><br>
+            <input type="radio" name="gender" value="male"
+                checked> Male<br>
+            <input type="radio" name="gender" value="female">
+            Female<br>
+            <input type="radio" name="gender" value="other">
+            Other
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="date-of-birth">Date of birth</label><br>
+            <input type="date" id="birthday" name="bday">
+        </div>
+        <div class="form-group">
+            <label for="new-father-name">Father's Name</label><br>
+            <input type="text" class="form-control"
+                id="fatherName">
+        </div>
+        <div class="form-group">
+            <label for="new-mother-name">Mother's Name</label><br>
+            <input type="text" class="form-control"
+                id="motherName">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="acceptancy">Does the father accept the child?</label><br>
+            <input type="radio" name="acceptancy" value="true">True<br>
+            <input type="radio" name="acceptancy" value="false">False<br>
+            <br>
+        </div>
+        <div class="form-group">
+            <label for="disability">Does the child has disability?</label><br>
+            <input type="radio" name="disability" value="true">True<br>
+            <input type="radio" name="disability" value="false">False<br>
+            <br>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="new-district">District</label>
+            <input type="text" class="form-control new-district">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="new-sector">Sector</label>
+            <input type="text" class="form-control new-sector">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="new-cell">Cell</label>
+            <input type="text" class="form-control new-cell">
+        </div>
+        <br>
+        </div>
+        <!-- <div id="new-addresses">
+            <div class="new-address">
+                
+            </div>
+        </div> -->
 
-                        <p>If yes mention it here</p>
-                        <textarea name="bio" rows="8" cols="40">Type something
-                            here</textarea>
-                        <br>
-                        <br>
-                        <h2>Place of Birth</h2>
-                        <div id="new-addresses">
-                            <div class="new-addresses">
-                                <div class="form-group">
-                                    <label for="new-country">Country</label>
-                                    <input type="text" class="form-control
-                                        new-country">
-                                </div>
-                                <br>
-                                <div class="form-group">
-                                    <label for="new-district">District</label>
-                                    <input type="text" class="form-control
-                                        new-district">
-                                </div>
-                                <br>
-                                <div class="form-group">
-                                    <label for="new-sector">Sector</label>
-                                    <input type="text" class="form-control
-                                        new-sector">
-                                </div>
-                                <br>
-                                <div class="form-group">
-                                    <label for="new-cell">Cell</label>
-                                    <input type="text" class="form-control
-                                        new-cell">
-                                </div>
-                            </div>
-                        </div>
-                        <button type="register" class="btn">Register</button>
-                        <button type="edit" class="btn"> Edit</button>
-                        <button type="delete" class="btn">Delete</button><br>
-                        <span class="btn btn-primary" id="add-address">Another
-                            address</span>
-                    </form>
-                    <h2>New born information:</h2>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+                
+               <h2>Child information:</h2>
                     <ol id="contacts">
 
                     </ol>
-                </div>
+
             </div>
         </div>
     </body>
