@@ -1,102 +1,138 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="styles.css" rel="stylesheet" type="text/css">
-        <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
-            <script type="text/javascript" src="scripts.js"></script>
-        <title>New Born Registration Book</title>
-    </head>
-    <body>
-        <div class="container">
-            <h1>New Born Registration Book</h1>
-<div id="form"><div class="col-md-6">
-    <h2>Add a contact:</h2>
-    <form id="new-contact">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+    <title>New Born Registration</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="home.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="new-born.html">Registration</a>
+    </div>
+    <div class="container">
         <div class="form-group">
-            <label for="new-first-name">First name</label>
-            <input type="text" class="form-control"
-                id="new-first-name">
-        </div>
-        <div class="form-group">
-            <label for="new-last-name">Last name</label>
-            <input type="text" class="form-control"
-                id="new-last-name">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="gender">Gender</label><br>
-            <input type="radio" name="gender" value="male"
-                checked> Male<br>
-            <input type="radio" name="gender" value="female">
-            Female<br>
-            <input type="radio" name="gender" value="other">
-            Other
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="date-of-birth">Date of birth</label><br>
-            <input type="date" id="birthday" name="bday">
-        </div>
-        <div class="form-group">
-            <label for="new-father-name">Father's Name</label><br>
-            <input type="text" class="form-control"
-                id="fatherName">
-        </div>
-        <div class="form-group">
-            <label for="new-mother-name">Mother's Name</label><br>
-            <input type="text" class="form-control"
-                id="motherName">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="acceptancy">Does the father accept the child?</label><br>
-            <input type="radio" name="acceptancy" value="true">True<br>
-            <input type="radio" name="acceptancy" value="false">False<br>
-            <br>
-        </div>
-        <div class="form-group">
-            <label for="disability">Does the child has disability?</label><br>
+            <label for="disability">Does the child has
+                disability?</label><br>
             <input type="radio" name="disability" value="true">True<br>
             <input type="radio" name="disability" value="false">False<br>
             <br>
+            <button id="search">Search</button>
         </div>
-        <br>
-        <div class="form-group">
-            <label for="new-district">District</label>
-            <input type="text" class="form-control new-district">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="new-sector">Sector</label>
-            <input type="text" class="form-control new-sector">
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="new-cell">Cell</label>
-            <input type="text" class="form-control new-cell">
-        </div>
-        <br>
+        <h1>New Born Registration Book</h1>
+        <div id="form">
+            <div class="col-md-12">
+                <h2>Add a contact:</h2>
+                <form id="new-contact">
+                    <div class="form-group">
+                        <table></table>
+                        <label for="new-first-name">First name</label>
+                        <input type="text" class="form-control" id="new-first-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-last-name">Last name</label>
+                        <input type="text" class="form-control" id="new-last-name">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="gender">Gender</label><br>
+                        <input type="radio" name="gender" value="male" checked> Male<br>
+                        <input type="radio" name="gender" value="female">
+                        Female<br>
+                        <input type="radio" name="gender" value="other">
+                        Other
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="date-of-birth">Date of birth</label><br>
+                        <input type="date" id="birthday" name="bday">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-father-name">Father's Name</label><br>
+                        <input type="text" class="form-control" id="fatherName">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-mother-name">Mother's Name</label><br>
+                        <input type="text" class="form-control" id="motherName">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="acceptancy">Does the father accept the
+                            child?</label><br>
+                        <input type="radio" name="acceptancy" value="true">True<br>
+                        <input type="radio" name="acceptancy" value="false">False<br>
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="disability">Does the child has
+                            disability?</label><br>
+                        <input type="radio" name="disability" value="true">True<br>
+                        <input type="radio" name="disability" value="false">False<br>
+                        <br>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="new-district">District</label>
+                        <input type="text" class="form-control
+                                new-district">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="new-sector">Sector</label>
+                        <input type="text" class="form-control new-sector">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="new-cell">Cell</label>
+                        <input type="text" class="form-control new-cell">
+                    </div>
+                    <br>
+            </div>
         </div>
         <!-- <div id="new-addresses">
             <div class="new-address">
                 
             </div>
         </div> -->
+        <button id="submit" type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="information">
+        <h2>Child information:</h2>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Birthday</th>
+                    <th>Mother Name</th>
+                    <th>Father Name</th>
+                    <th>Child acceptancy</th>
+                    <th>Child disability</th>
+                    <th>District</th>
+                    <th>Sector</th>
+                    <th>Cell</th>
+                </tr>
+            </thead>
+            <tbody id="contacts"></tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <p class="footerP">©Childregistration@moringaschool 2018 ©</p>
+        <img src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/566/s200/10710615-512708608864666-6379526937469666187-n.png">
+    </footer>
+</body>
 
-        <button type="submit" class="btn">Submit</button>
-    </form>
-</div>
-                
-               <h2>Child information:</h2>
-                    <ol id="contacts">
-
-                    </ol>
-
-            </div>
-        </div>
-    </body>
 </html>
