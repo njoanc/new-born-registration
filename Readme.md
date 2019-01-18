@@ -6,11 +6,11 @@ so it will help us to register the baby and his/her two parents and if her/his d
 This information will be added on the identification of the baby when he/she grows up.
 It will also reduce the number of little girl that get pregnant at not real time.
 # Author(s) information.
-Jeanne d'Arc NYIRAMWIZA
-Emima NIRINGIYIMANA
-Delphine MBOYIRE
-Elisabeth ABIJURU
-Florantine UWINEZA
+## 1.Jeanne d'Arc NYIRAMWIZA;
+## 2.Emima NIRINGIYIMANA;
+## 3.Delphine MBOYIRE;
+## 4.Elisabeth ABIJURU;
+## 5.Florantine UWINEZA.
 # Setup instructions - includes any scripts that need to be run if necessary.
 # Behavoir Driven Project
 The project refers on how to check the identification of the new born if he/she is accepted by his/her father,
